@@ -43,8 +43,12 @@
 		<dependency>
 		    <groupId>mysql</groupId>
 		    <artifactId>mysql-connector-java</artifactId>
+<<<<<<< HEAD
+		    </dependency>	
+=======
 		    <version>8.0.19</version>
 		</dependency>	
+>>>>>>> c3059727bf17ea75c10c82c4f3c99c057bad82b4
 	</dependencies>
 
 	<build>
