@@ -12,33 +12,38 @@ import com.sun.istack.NotNull;
 import fr.utbm.lo54projet.Entity.CourseSession;
 import fr.utbm.lo54projet.Service.SessionService;
 
-
 @RestController
 @RequestMapping("session")
 public class SessionController {
-	
+
 	@Autowired
 	SessionService sessionService;
-	
+
+	@RequestMapping("getAllSessions")
+	public List<CourseSession> getAllSessions() {
+		return sessionService.getSession();
+	}
+
 	@RequestMapping("dateA")
-	public List<CourseSession> getSessionByDateA(Date a){
+	public List<CourseSession> getSessionByDateA(Date a) {
 		return sessionService.getByDateA(a);
 	}
-	
+
 	@RequestMapping("dateB")
-	public List<CourseSession> getSessionByDateB(Date b){
+	public List<CourseSession> getSessionByDateB(Date b) {
 		return sessionService.getByDateB(b);
 	}
-	
-	//根据LOCATION ID查询
+
+	// 根据LOCATION ID查询
 	@RequestMapping("location")
-	public List<CourseSession> getSessionByLocation(Long ID){
+	public List<CourseSession> getSessionByLocation(Long ID) {
 		return sessionService.getByLocation(ID);
 	}
-	
-	//查看某个COURSE的所有SESSIONS，via Course CODE
+
+	// 查看某个COURSE的所有SESSIONS，via Course CODE
 	@RequestMapping("allsessions")
-	public List<CourseSession> getSessionByCourse(@NotNull String code){
+	public List<CourseSession> getSessionByCourse(@NotNull String code) {
 		return sessionService.getByCourse(code);
 	}
+
 }

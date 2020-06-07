@@ -11,4 +11,5 @@ public interface CourseDao extends JpaRepository<Course, String> {
 	List<Course> findAll();
 
 	List<Course> findByTitleLike(String Name);
+
 }

@@ -11,5 +11,4 @@ public class Lo54projetApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(Lo54projetApplication.class, args);
 	}
-
 }

@@ -14,6 +14,21 @@ public class Course {
 	@Column(name = "TITLE")
 	private String title;
 
+	public Course(String cc, String t) {
+		super();
+		courseCode = cc;
+		title = t;
+	}
+
+	public Course() {
+	}
+
+	public Course(Course c) {
+		super();
+		courseCode = c.courseCode;
+		title = c.title;
+	}
+
 	public String getCourseCode() {
 		return courseCode;
 	}

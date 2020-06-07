@@ -21,6 +21,7 @@ public class CourseController {
 	 * 
 	 * @return
 	 */
+
 	@RequestMapping("getCourse")
 	public List<Course> getCourse() {
 		return courseService.getCourse();
@@ -30,5 +31,5 @@ public class CourseController {
 	public List<Course> getCourseTitleLike(String Name) {
 		return courseService.getCourseByNameLike("%" + Name + "%");
 	}
-	//可以通过超链接指向某个课程对应的Session
+	// 可以通过超链接指向某个课程对应的Session
 }
