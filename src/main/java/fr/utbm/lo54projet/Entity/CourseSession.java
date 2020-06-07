@@ -1,10 +1,21 @@
 package fr.utbm.lo54projet.Entity;
 
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class CourseSession {
@@ -81,5 +92,17 @@ public class CourseSession {
 		return "CourseSession [courseSessionId=" + courseSessionId + ", startDate=" + startDate + ", endDate=" + endDate
 				+ ", max=" + max + ", courseCode=" + courseCode + ", locationId=" + locationId + "]";
 	}
-
+	
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "COURSE_CODE",insertable=false,updatable=false)
+    @JsonIgnore
+    @NotFound(action = NotFoundAction.IGNORE)
+	private Course course;
+	
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable
+	@JoinColumn(name = "LOCATION_ID",insertable=false,updatable=false)
+    @JsonIgnore
+    @NotFound(action = NotFoundAction.IGNORE)
+	private List<Location> location;
 }

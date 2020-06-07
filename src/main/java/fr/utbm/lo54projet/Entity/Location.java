@@ -1,8 +1,12 @@
 package fr.utbm.lo54projet.Entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Location {
@@ -34,5 +38,9 @@ public class Location {
 	public String toString() {
 		return "Location [locationId=" + locationId + ", locationCity=" + locationCity + "]";
 	}
+	
+	@ManyToMany
+	@JoinTable
+	private List<CourseSession> CourseSession;
 
 }
