@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.sun.istack.NotNull;
 
@@ -30,7 +31,15 @@ public class SessionController {
 	@Autowired
 	LocationService locationService;
 
-	@RequestMapping("getAllSessions")
+	@RequestMapping("")
+	public ModelAndView login() {
+		ModelAndView mv = new ModelAndView("/accueil");
+		List<SessionsResult> cslist = getAllSessions();
+		mv.addObject("sessionList", cslist);
+		return mv;
+	}
+
+	// @RequestMapping("getAllSessions")
 	public List<SessionsResult> getAllSessions() {
 		return sessionService.getSession();
 	}
@@ -55,10 +64,16 @@ public class SessionController {
 	}
 
 	@RequestMapping("filter")
-	public String filter(Model model) {
+	/*
+	 * public String filter(Model model) { List<Location> list =
+	 * locationService.getLocation(); model.addAttribute("list", list); return
+	 * "filter"; }
+	 */
+	public ModelAndView filter() {
+		ModelAndView mv = new ModelAndView("/filter");
 		List<Location> list = locationService.getLocation();
-		model.addAttribute("list", list);
-		return "filter";
+		mv.addObject("list", list);
+		return mv;
 	}
 
 	/*
