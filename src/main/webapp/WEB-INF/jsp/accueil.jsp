@@ -7,23 +7,23 @@
 </head>
 <body>
 	<h1 style="color:blue; text-align:center">Welcome to the course selection system</h1>
-	<table border="1" cellspacing="0" align="center">
+	<table border="1" cellspacing="0" align="center" width="900">
 	<tr align="center">
-            <td>Course Code</td>
-            <td>Title</td>
-            <td>Start Date</td>
-            <td>End Date</td>
-            <td>Capacity</td>
-            <td>Location</td>
+            <td width="150">Course Code</td>
+            <td width="150">Title</td>
+            <td width="150">Start Date</td>
+            <td width="150">End Date</td>
+            <td width="150">Capacity</td>
+            <td width="150">Location</td>
 	</tr>
 	<c:forEach items="${sessionList}" var="node">
 		<tr> 
-		     <td>${node.courseCode}</td>
-		     <td>${node.title}</td>
-		     <td>${node.startDate}</td>
-		     <td>${node.endDate}</td>
-		     <td>${node.max}</td>
-		     <td>${node.locationCity}</td>
+		     <td width="150">${node.courseCode}</td>
+		     <td width="150">${node.title}</td>
+		     <td width="150">${node.startDate}</td>
+		     <td width="150">${node.endDate}</td>
+		     <td width="150">${node.max}</td>
+		     <td width="150">${node.locationCity}</td>
 		</tr>
 	</c:forEach>
    	</table><br>
