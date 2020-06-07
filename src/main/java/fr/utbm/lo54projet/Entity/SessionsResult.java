@@ -9,12 +9,13 @@ public class SessionsResult {
 	private Date endDate;
 	private int max;
 	private String locationCity;
-	
+	private String pourcentage;
+
 	public SessionsResult() {
-		
 	}
-	
-	public SessionsResult(String courseCode, String title, Date startDate, Date endDate, int max, String locationCity) {
+
+	public SessionsResult(String courseCode, String title, Date startDate, Date endDate, int max, String locationCity,
+			String pourcentage) {
 		this.courseCode = courseCode;
 		this.title = title;
 		this.startDate = startDate;
@@ -22,50 +23,68 @@ public class SessionsResult {
 		this.max = max;
 		this.locationCity = locationCity;
 	}
+
 	public String getCourseCode() {
 		return courseCode;
 	}
+
+	public String getPourcentage() {
+		return pourcentage;
+	}
+
+	public void setPourcentage(String pourcentage) {
+		this.pourcentage = pourcentage;
+	}
+
 	public void setCourseCode(String courseCode) {
 		this.courseCode = courseCode;
 	}
+
 	public String getTitle() {
 		return title;
 	}
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
+
 	public Date getStartDate() {
 		return startDate;
 	}
+
 	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
 	}
+
 	public Date getEndDate() {
 		return endDate;
 	}
+
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
+
 	public int getMax() {
 		return max;
 	}
+
 	public void setMax(int max) {
 		this.max = max;
 	}
+
 	public String getLocationCity() {
 		return locationCity;
 	}
+
 	public void setLocationCity(String locationCity) {
 		this.locationCity = locationCity;
 	}
+
 	@Override
 	public String toString() {
 		return "SessionsResult [courseCode=" + courseCode + ", title=" + title + ", startDate=" + startDate
-				+ ", endDate=" + endDate + ", max=" + max + ", locationCity=" + locationCity + "]";
+				+ ", endDate=" + endDate + ", max=" + max + ", locationCity=" + locationCity + ", pourcentage="
+				+ pourcentage + "]";
 	}
-	
-	
-	
-	
-	
+
 }

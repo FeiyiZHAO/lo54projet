@@ -15,6 +15,7 @@
         <th>Start_date</th>
         <th>End_date</th>
         <th>Max</th>
+        <th>Percentage</th>
         <th>Location</th>
     </tr>
     <c:if test="${not empty sessions}">
@@ -25,6 +26,7 @@
                 <td>${session.startDate}</td>
                 <td>${session.endDate}</td>
                 <td>${session.max}</td>
+                <td>${session.pourcentage}</td>
                 <td>${session.locationCity}</td>
             </tr>
         </c:forEach>

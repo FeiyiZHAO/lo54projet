@@ -48,7 +48,8 @@ public class SessionService {
 			view.setStartDate((Date) rowArray[2]);
 			view.setEndDate((Date) rowArray[3]);
 			view.setMax((int) rowArray[4]);
-			view.setLocationCity((String) rowArray[5]);
+			view.setPourcentage((String) (rowArray[5].toString() + "%"));
+			view.setLocationCity((String) rowArray[6]);
 			views.add(view);
 		}
 		return views;
@@ -65,7 +66,8 @@ public class SessionService {
 			view.setStartDate((Date) rowArray[2]);
 			view.setEndDate((Date) rowArray[3]);
 			view.setMax((int) rowArray[4]);
-			view.setLocationCity((String) rowArray[5]);
+			view.setPourcentage((String) (rowArray[5].toString() + "%"));
+			view.setLocationCity((String) rowArray[6]);
 			views.add(view);
 		}
 		return views;
@@ -82,7 +84,8 @@ public class SessionService {
 			view.setStartDate((Date) rowArray[2]);
 			view.setEndDate((Date) rowArray[3]);
 			view.setMax((int) rowArray[4]);
-			view.setLocationCity((String) rowArray[5]);
+			view.setPourcentage((String) (rowArray[5].toString() + "%"));
+			view.setLocationCity((String) rowArray[6]);
 			views.add(view);
 		}
 		return views;
@@ -99,7 +102,8 @@ public class SessionService {
 			view.setStartDate((Date) rowArray[2]);
 			view.setEndDate((Date) rowArray[3]);
 			view.setMax((int) rowArray[4]);
-			view.setLocationCity((String) rowArray[5]);
+			view.setPourcentage((String) (rowArray[5].toString() + "%"));
+			view.setLocationCity((String) rowArray[6]);
 			views.add(view);
 		}
 		return views;
@@ -116,6 +120,7 @@ public class SessionService {
 			view.setStartDate((Date) rowArray[2]);
 			view.setEndDate((Date) rowArray[3]);
 			view.setMax((int) rowArray[4]);
+			view.setPourcentage("None");
 			view.setLocationCity((String) rowArray[5]);
 			views.add(view);
 		}
