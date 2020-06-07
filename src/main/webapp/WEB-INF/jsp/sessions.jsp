@@ -13,7 +13,7 @@
         <th>Course Code</th>
         <th>Title</th>
         <th>Start_date</th>
-        <th>Fin_date</th>
+        <th>End_date</th>
         <th>Max</th>
         <th>Location</th>
     </tr>
