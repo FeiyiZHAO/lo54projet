@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface LocationDao extends JpaRepository<Location, Long>{
 	
-	List<Location> findAll();//用于显示Loacation下拉列表
-	
-	
+	List<Location> findAll();
+
+    Location findByLocationCity(String LocationCity);
 }

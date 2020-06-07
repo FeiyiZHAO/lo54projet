@@ -21,6 +21,12 @@ public class LocationService {
 	public List<Location> getLocation() {
 		return locationDao.findAll();
 	}
-
+	
+	public Long findId(String locationCity){
+		Location l = new Location();
+		l = locationDao.findByLocationCity(locationCity);
+		return l.getLocationId();
+	}
+	
 
 }

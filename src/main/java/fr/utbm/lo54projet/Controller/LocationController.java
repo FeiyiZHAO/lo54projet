@@ -12,11 +12,13 @@ import fr.utbm.lo54projet.Service.LocationService;
 @RestController
 @RequestMapping("location")
 public class LocationController {
+	/*
 	@Autowired
 	LocationService locationService;
 	
-	@RequestMapping("allLocations")
 	public List<Location> getAllLocation(){
 		return locationService.getLocation();
 	}
+	*/
+	
 }
