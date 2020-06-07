@@ -11,9 +11,6 @@ public interface ClientDao extends JpaRepository<Client, Long>{
 	
 	List<Client> findAll();
 
-	List<Client> findByLastNameLike(String lastname);
-	List<Client> findByFirstNameLike(String firstname);
-
 	Optional<Client> findById(Long clientId);
 
 }
