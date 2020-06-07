@@ -105,8 +105,21 @@ public class SessionService {
 		return views;
 	}
 
-	public List<CourseSession> getSession() {
-		return sessionDao.findAll();
+	public List<SessionsResult> getSession() {
+		List<SessionsResult> views = new ArrayList<>();
+		List<Object[]> result = sessionDao.findSessions();
+		for (Object o : result) {
+			SessionsResult view = new SessionsResult();
+			Object[] rowArray = (Object[]) o;
+			view.setCourseCode(((String) rowArray[0]));
+			view.setTitle((String) rowArray[1]);
+			view.setStartDate((Date) rowArray[2]);
+			view.setEndDate((Date) rowArray[3]);
+			view.setMax((int) rowArray[4]);
+			view.setLocationCity((String) rowArray[5]);
+			views.add(view);
+		}
+		return views;
 	}
 
 }

@@ -1,6 +1,8 @@
 package fr.utbm.lo54projet.Controller;
 
 import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,21 +21,17 @@ import fr.utbm.lo54projet.Entity.SessionsResult;
 import fr.utbm.lo54projet.Service.LocationService;
 import fr.utbm.lo54projet.Service.SessionService;
 
-<<<<<<<HEAD @RestController @RequestMapping("session")=======
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-
 @Controller
 public class SessionController {
 
 	@Autowired
 	SessionService sessionService;
-	
+
 	@Autowired
 	LocationService locationService;
 
 	@RequestMapping("getAllSessions")
-	public List<CourseSession> getAllSessions() {
+	public List<SessionsResult> getAllSessions() {
 		return sessionService.getSession();
 	}
 
@@ -86,55 +84,55 @@ public class SessionController {
 	 * model.addAttribute("sessions",list); return "sessions"; }
 	 */
 	@RequestMapping("sessions")
-	public String getCourse(HttpServletRequest request,@RequestParam("keyword") String keyword,@RequestParam("date") String str,@RequestParam("location") String city, Model model) throws ParseException {
-        //get course keyword
-        keyword= request.getParameter("keyword");
-        
-		city= request.getParameter("location");
+	public String getCourse(HttpServletRequest request, @RequestParam("keyword") String keyword,
+			@RequestParam("date") String str, @RequestParam("location") String city, Model model)
+			throws ParseException {
+		// get course keyword
+		keyword = request.getParameter("keyword");
+
+		city = request.getParameter("location");
 
 		if (city.equals("All")) {
-			//get date
-			str= request.getParameter("date"); 
+			// get date
+			str = request.getParameter("date");
 			if (str == "") {
-				List<SessionsResult>  list = sessionService.getSessions(keyword);
-				model.addAttribute("sessions",list);
-			}else {
-		        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");  
-		        java.util.Date d = null;  
-		        try {  
-		            d = format.parse(str);  
-		        } catch (Exception e) {  
-		            e.printStackTrace();  
-		        }
-			    java.sql.Date sqlDateA = new java.sql.Date(d.getTime());  
-			    List<SessionsResult>  list = sessionService.getSessions(sqlDateA,keyword);
-			    model.addAttribute("sessions",list);
+				List<SessionsResult> list = sessionService.getSessions(keyword);
+				model.addAttribute("sessions", list);
+			} else {
+				SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+				java.util.Date d = null;
+				try {
+					d = format.parse(str);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				java.sql.Date sqlDateA = new java.sql.Date(d.getTime());
+				List<SessionsResult> list = sessionService.getSessions(sqlDateA, keyword);
+				model.addAttribute("sessions", list);
+			}
+		} else {
+			// get location id
+			Long locationId = locationService.findId(city);
+
+			// get date
+			str = request.getParameter("date");
+			if (str == "") {
+				List<SessionsResult> list = sessionService.getSessions(locationId, keyword);
+				model.addAttribute("sessions", list);
+			} else {
+				SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+				java.util.Date d = null;
+				try {
+					d = format.parse(str);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				java.sql.Date sqlDateA = new java.sql.Date(d.getTime());
+				List<SessionsResult> list = sessionService.getSessions(locationId, sqlDateA, keyword);
+				model.addAttribute("sessions", list);
 			}
 		}
-		else{  
-			//get location id
-	        Long locationId = locationService.findId(city);
-	        
-			//get date
-			str= request.getParameter("date"); 
-			if (str == "") {
-				List<SessionsResult>  list = sessionService.getSessions(locationId,keyword);
-				model.addAttribute("sessions",list);
-			}else {
-		        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");  
-		        java.util.Date d = null;  
-		        try {  
-		            d = format.parse(str);  
-		        } catch (Exception e) {  
-		            e.printStackTrace();  
-		        }
-			    java.sql.Date sqlDateA = new java.sql.Date(d.getTime());  
-			    List<SessionsResult>  list = sessionService.getSessions(locationId,sqlDateA,keyword);
-			    model.addAttribute("sessions",list);
-			 }  
-		}
 
-		
 		return "sessions";
 	}
 }

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-import fr.utbm.lo54projet.Entity.CourseSession;
+import fr.utbm.lo54projet.Entity.SessionsResult;
 
 @RestController
 @RequestMapping("")
@@ -20,7 +20,7 @@ public class DefaultView {
 	@RequestMapping("")
 	public ModelAndView login() {
 		ModelAndView mv = new ModelAndView("/accueil");
-		List<CourseSession> cslist = sc.getAllSessions();
+		List<SessionsResult> cslist = sc.getAllSessions();
 		mv.addObject("sessionList", cslist);
 		return mv;
 	}

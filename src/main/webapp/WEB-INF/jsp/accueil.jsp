@@ -10,21 +10,25 @@
 	<table border="1" cellspacing="0" align="center">
 	<tr align="center">
             <td>Course Code</td>
+            <td>Title</td>
             <td>Start Date</td>
             <td>End Date</td>
             <td>Capacity</td>
+            <td>Location</td>
 	</tr>
 	<c:forEach items="${sessionList}" var="node">
 		<tr> 
 		     <td>${node.courseCode}</td>
+		     <td>${node.title}</td>
 		     <td>${node.startDate}</td>
 		     <td>${node.endDate}</td>
 		     <td>${node.max}</td>
+		     <td>${node.locationCity}</td>
 		</tr>
 	</c:forEach>
    	</table><br>
 </body>
-<form method="post" action="/course/getCourse">
+<form method="post" action="/filter">
 	<center>
 		<input name="enter" type="submit" value="Enter" style='font-size:20px'/>
 	</center>

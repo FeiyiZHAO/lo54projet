@@ -12,13 +12,8 @@
 	<artifactId>lo54projet</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>lo54projet</name>
-<<<<<<< HEAD
 	<description>Demo project for Spring Boot</description>
 	<packaging>war</packaging>
-=======
-	<description>Demo project for Spring Boot</description>	
-
->>>>>>> 1190772643d7c5ccf921d8ef7a1e2d6e77de068f
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
