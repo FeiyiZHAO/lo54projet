@@ -24,14 +24,6 @@ public class ClientService {
 
 	public Optional<Client> getClientById(Long clientId) {
 		return clientRepository.findById(clientId);
-		}
-	
-	public List<Client> getCourseByFirstNameLike(String firstname) {
-		return clientRepository.findByFirstNameLike(firstname);
-	}
-
-	public List<Client> getCourseByLastNameLike(String lastname) {
-		return clientRepository.findByLastNameLike(lastname);
 	}
 	
 	public Client saveClient(Client client) {
