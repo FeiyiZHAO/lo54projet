@@ -1,7 +1,6 @@
 package fr.utbm.lo54projet.Entity;
 
 import java.sql.Date;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,7 +8,6 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 import org.hibernate.annotations.NotFound;
@@ -99,10 +97,10 @@ public class CourseSession {
     @NotFound(action = NotFoundAction.IGNORE)
 	private Course course;
 	
-	@ManyToMany(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinTable
 	@JoinColumn(name = "LOCATION_ID",insertable=false,updatable=false)
     @JsonIgnore
     @NotFound(action = NotFoundAction.IGNORE)
-	private List<Location> location;
+	private Location location;
 }
