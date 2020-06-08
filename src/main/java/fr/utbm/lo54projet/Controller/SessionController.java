@@ -98,6 +98,8 @@ public class SessionController {
 	 * list = sessionService.getByDateA(sqlDate);
 	 * model.addAttribute("sessions",list); return "sessions"; }
 	 */
+	
+	
 	@RequestMapping("sessions")
 	public String getCourse(HttpServletRequest request, @RequestParam("keyword") String keyword,
 			@RequestParam("date") String str, @RequestParam("location") String city, Model model)

@@ -98,7 +98,6 @@ public class CourseSession {
 	private Course course;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinTable
 	@JoinColumn(name = "LOCATION_ID",insertable=false,updatable=false)
     @JsonIgnore
     @NotFound(action = NotFoundAction.IGNORE)
