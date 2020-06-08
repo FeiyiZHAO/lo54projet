@@ -16,11 +16,11 @@ public class ClientController {
 	@Autowired
 	ClientService clientService;
 
-	@RequestMapping("client")
+	@RequestMapping("registre")
 	public String getClient(Model model) {
 		List<Client> clients = new ArrayList<>();
 		clients = clientService.getClient();
 		model.addAttribute("clients", clients);
-		return "client";
+		return "registre";
 	}
 }

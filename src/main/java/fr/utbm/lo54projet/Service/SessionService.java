@@ -15,7 +15,6 @@ import fr.utbm.lo54projet.Repository.SessionDao;
 
 @Service
 public class SessionService {
-
 	@Resource
 	SessionDao sessionDao;
 

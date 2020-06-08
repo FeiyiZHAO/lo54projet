@@ -9,12 +9,12 @@
 	<h1 style="color:blue; text-align:center">Welcome to the course selection system</h1>
 	<table border="1" cellspacing="0" align="center" width="900">
 	<tr align="center">
-            <td width="150">Course Code</td>
-            <td width="150">Title</td>
-            <td width="150">Start Date</td>
-            <td width="150">End Date</td>
-            <td width="150">Capacity</td>
-            <td width="150">Location</td>
+            <th width="150">Course Code</th>
+            <th width="150">Title</th>
+            <th width="150">Start Date</th>
+            <th width="150">End Date</th>
+            <th width="150">Capacity</th>
+            <th width="150">Location</th>
 	</tr>
 	<c:forEach items="${sessionList}" var="node">
 		<tr> 
