@@ -12,5 +12,5 @@ public interface ClientDao extends JpaRepository<Client, Long>{
 	List<Client> findAll();
 
 	Optional<Client> findById(Long clientId);
-
+	
 }

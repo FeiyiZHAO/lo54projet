@@ -1,5 +1,6 @@
 package fr.utbm.lo54projet.Entity;
 
+import java.math.BigInteger;
 import java.sql.Date;
 
 import javax.persistence.Column;
@@ -16,7 +17,7 @@ public class CourseSession {
 
 	@Id
 	@Column(name = "COURSE_SESSION_ID")
-	private Long courseSessionId;
+	private BigInteger courseSessionId;
 
 	@Column(name = "START_DATE")
 	private Date startDate;
@@ -33,11 +34,11 @@ public class CourseSession {
 	@Column(name = "LOCATION_ID")
 	private Long locationId;
 
-	public Long getCourseSessionId() {
+	public BigInteger getCourseSessionId() {
 		return courseSessionId;
 	}
 
-	public void setCourseSessionId(Long courseSessionId) {
+	public void setCourseSessionId(BigInteger courseSessionId) {
 		this.courseSessionId = courseSessionId;
 	}
 
@@ -81,11 +82,15 @@ public class CourseSession {
 		this.locationId = locationId;
 	}
 
+
+
 	@Override
 	public String toString() {
-		return "CourseSession [courseSessionId=" + courseSessionId + ", startDate=" + startDate + ", endDate=" + endDate
-				+ ", max=" + max + ", courseCode=" + courseCode + ", locationId=" + locationId + "]";
+		return "CourseSession [startDate=" + startDate + ", endDate=" + endDate + ", max=" + max + ", courseCode="
+				+ courseCode + ", locationId=" + locationId + ", course=" + course + ", location=" + location + "]";
 	}
+
+
 
 	@ManyToOne
 	@JoinColumn(name = "COURSE_CODE", insertable = false, updatable = false)

@@ -25,10 +25,11 @@
 					<h4 class="text-center"> ${sessionId}</h4>
 				</div>
 				<div class="panel-body">
-					<form class="form-horizontal" role="form" action="CheckRegister.jsp" accept-charset="UTF-8" method="post" οnsubmit="return validate()">
+					<form class="form-horizontal" role="form" action="success" accept-charset="UTF-8" method="post" οnsubmit="return validate()">
 						<input name="utf8" type="hidden" value="&#x2713;" />
 						<input type="hidden" name="authenticity_token" value="cFE0MDKxyoAORTDnrgojEr0WGEMN3S9VYjEFJC10zUOgvHCCWlC1e6BcV7c0p7u/Zgjp8vHqYdDiXenxRJWiIw==" />
- 
+ 						<input name="sessionId" type="hidden" value="${sessionId}" />
+ 						
 						<div class="form-group">
 							<label class="col-sm-3 control-label" for="client_lastname">Last Name</label>
 							<div class="col-sm-9">
@@ -36,7 +37,7 @@
 									<div class="input-group-addon">
 										<span class="glyphicon glyphicon-user"></span>
 									</div>
-									<input class="form-control" placeholder="Enter your lastname" type="text" name="firstname" maxlength="16" οnfοcus="if(this.value == 'Enter your lastname') this.value =''" />
+									<input class="form-control" placeholder="Enter your lastname" type="text" name="lastname" maxlength="16" οnfοcus="if(this.value == 'Enter your lastname') this.value =''" />
 								</div>
 							</div>
 						</div>
@@ -48,7 +49,7 @@
 									<div class="input-group-addon">
 										<span class="glyphicon glyphicon-user"></span>
 									</div>
-									<input class="form-control" placeholder="Enter your firstname" type="text" name="lastname" maxlength="16" οnfοcus="if(this.value == 'Enter your firstname') this.value =''" />
+									<input class="form-control" placeholder="Enter your firstname" type="text" name="firstname" maxlength="16" οnfοcus="if(this.value == 'Enter your firstname') this.value =''" />
 								</div>
 							</div>
 						</div>
@@ -89,8 +90,8 @@
 							</div>
 						</div>
  
-						<a class="btn btn-default btn-block" href="/">Sign Up</a>
-						<a class="btn btn-default btn-block" href="/">Cancel</a>
+								  <input type="submit" value="Sign up" style='font-size:20px'/>
+								  <input type="reset" value="Reset" style='font-size:20px'/>
  
 					</form>
 				</div>
