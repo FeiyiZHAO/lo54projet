@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -86,7 +85,7 @@
 							</div>
 						</div>
  
-						<input type="submit" name="commit" value="Sign Up" class="btn btn-primary btn-block" />
+						<a class="btn btn-default btn-block" href="/">Sign Up</a>
 						<a class="btn btn-default btn-block" href="/">Cancel</a>
  
 					</form>
