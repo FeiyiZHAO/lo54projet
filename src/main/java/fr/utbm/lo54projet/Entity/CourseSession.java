@@ -91,15 +91,13 @@ public class CourseSession {
 				+ ", max=" + max + ", courseCode=" + courseCode + ", locationId=" + locationId + "]";
 	}
 	
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "COURSE_CODE",insertable=false,updatable=false)
-    @JsonIgnore
     @NotFound(action = NotFoundAction.IGNORE)
 	private Course course;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
 	@JoinColumn(name = "LOCATION_ID",insertable=false,updatable=false)
-    @JsonIgnore
     @NotFound(action = NotFoundAction.IGNORE)
 	private Location location;
 }
