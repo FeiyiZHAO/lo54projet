@@ -52,8 +52,9 @@ public interface SessionDao extends JpaRepository<CourseSession, Long> {
 			+ " group by s.COURSE_CODE,c.TITLE,s.START_DATE,s.END_DATE,s.MAX,l.LOCATION_CITY", nativeQuery = true)
 	List<Object[]> findSessions(Date sqlDateA, String keyword);
 
-	@Query(value = "select s.COURSE_CODE,c.TITLE," + "s.START_DATE," + "s.END_DATE," + "s.MAX," + "l.LOCATION_CITY"
-			+ " from client cl, course c inner join course_session s" + " on s.COURSE_CODE=c.COURSE_CODE"
-			+ " inner join location l" + " on l.LOCATION_ID=s.LOCATION_ID", nativeQuery = true)
+	@Query(value = "select distinct s.COURSE_CODE,c.TITLE," + "s.START_DATE," + "s.END_DATE," + "s.MAX,"
+			+ "l.LOCATION_CITY" + " from client cl, course c inner join course_session s"
+			+ " on s.COURSE_CODE=c.COURSE_CODE" + " inner join location l" + " on l.LOCATION_ID=s.LOCATION_ID"
+			+ " order by s.COURSE_CODE", nativeQuery = true)
 	List<Object[]> findSessions();
 }
