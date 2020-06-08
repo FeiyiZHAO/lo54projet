@@ -17,7 +17,9 @@
         <th>Max</th>
         <th>Percentage</th>
         <th>Location</th>
+        <th>Select</th>
     </tr>
+
     <c:if test="${not empty sessions}">
         <c:forEach items="${sessions}" var="session" >
             <tr>
@@ -28,6 +30,12 @@
                 <td>${session.max}</td>
                 <td>${session.pourcentage}</td>
                 <td>${session.locationCity}</td>
+                <td>
+	            <form action="registre" method="POST">
+	        		<input type="hidden" value="${session.courseSessionId}" name="sessionId"/>
+	                <input type="submit" value="select"/>
+				</form>
+				</td>
             </tr>
         </c:forEach>
     </c:if>

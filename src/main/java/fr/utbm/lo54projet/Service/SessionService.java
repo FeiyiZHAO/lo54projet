@@ -1,5 +1,6 @@
 package fr.utbm.lo54projet.Service;
 
+import java.math.BigInteger;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
@@ -49,6 +50,7 @@ public class SessionService {
 			view.setMax((int) rowArray[4]);
 			view.setPourcentage((String) (rowArray[5].toString() + "%"));
 			view.setLocationCity((String) rowArray[6]);
+			view.setCourseSessionId(((BigInteger) rowArray[7]));
 			views.add(view);
 		}
 		return views;
@@ -67,6 +69,7 @@ public class SessionService {
 			view.setMax((int) rowArray[4]);
 			view.setPourcentage((String) (rowArray[5].toString() + "%"));
 			view.setLocationCity((String) rowArray[6]);
+			view.setCourseSessionId(((BigInteger) rowArray[7]));
 			views.add(view);
 		}
 		return views;
@@ -85,6 +88,7 @@ public class SessionService {
 			view.setMax((int) rowArray[4]);
 			view.setPourcentage((String) (rowArray[5].toString() + "%"));
 			view.setLocationCity((String) rowArray[6]);
+			view.setCourseSessionId(((BigInteger) rowArray[7]));
 			views.add(view);
 		}
 		return views;
@@ -103,6 +107,7 @@ public class SessionService {
 			view.setMax((int) rowArray[4]);
 			view.setPourcentage((String) (rowArray[5].toString() + "%"));
 			view.setLocationCity((String) rowArray[6]);
+			view.setCourseSessionId(((BigInteger) rowArray[7]));
 			views.add(view);
 		}
 		return views;

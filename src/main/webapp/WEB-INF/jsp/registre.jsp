@@ -20,6 +20,10 @@
 				<div class="panel-heading">
 					<h3 class="text-center">Sign Up</h3>
 				</div>
+				<div class="panel-heading">
+					<h4 class="text-center">Selected session is </h4>
+					<h4 class="text-center"> ${sessionId}</h4>
+				</div>
 				<div class="panel-body">
 					<form class="form-horizontal" role="form" action="CheckRegister.jsp" accept-charset="UTF-8" method="post" οnsubmit="return validate()">
 						<input name="utf8" type="hidden" value="&#x2713;" />

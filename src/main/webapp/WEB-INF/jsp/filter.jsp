@@ -8,7 +8,6 @@
 <title>Filter</title>
 </head>
 <body>
-<font size="6">
 <form action="sessions" method="POST">
 <h2>&nbsp;&nbsp;Search courses</h2>
 <ul style="list-style-type:none">
@@ -26,8 +25,7 @@
   <li>Date : <input type="date" name="date"></li>
   <li><input type="submit" value="Search" style='font-size:20px'/></li>
   <li><input type="reset" value="Reset" style='font-size:20px'/></li>
-</ul>
+</ul> 
 </form>
-</font> 
 </body>
 </html>

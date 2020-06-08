@@ -1,5 +1,6 @@
 package fr.utbm.lo54projet.Entity;
 
+import java.math.BigInteger;
 import java.sql.Date;
 
 public class SessionsResult {
@@ -10,19 +11,35 @@ public class SessionsResult {
 	private int max;
 	private String locationCity;
 	private String pourcentage;
-
+	private BigInteger courseSessionId;
+	
 	public SessionsResult() {
 	}
 
+
 	public SessionsResult(String courseCode, String title, Date startDate, Date endDate, int max, String locationCity,
-			String pourcentage) {
+			String pourcentage, BigInteger courseSessionId) {
+		super();
 		this.courseCode = courseCode;
 		this.title = title;
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.max = max;
 		this.locationCity = locationCity;
+		this.pourcentage = pourcentage;
+		this.courseSessionId = courseSessionId;
 	}
+
+
+	public BigInteger getCourseSessionId() {
+		return courseSessionId;
+	}
+
+
+	public void setCourseSessionId(BigInteger courseSessionId) {
+		this.courseSessionId = courseSessionId;
+	}
+
 
 	public String getCourseCode() {
 		return courseCode;
