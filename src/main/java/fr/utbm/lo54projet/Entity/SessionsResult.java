@@ -28,14 +28,6 @@ public class SessionsResult {
 		return courseCode;
 	}
 
-	public String getPourcentage() {
-		return pourcentage;
-	}
-
-	public void setPourcentage(String pourcentage) {
-		this.pourcentage = pourcentage;
-	}
-
 	public void setCourseCode(String courseCode) {
 		this.courseCode = courseCode;
 	}
@@ -78,6 +70,14 @@ public class SessionsResult {
 
 	public void setLocationCity(String locationCity) {
 		this.locationCity = locationCity;
+	}
+
+	public String getPourcentage() {
+		return pourcentage;
+	}
+
+	public void setPourcentage(String pourcentage) {
+		this.pourcentage = pourcentage;
 	}
 
 	@Override
