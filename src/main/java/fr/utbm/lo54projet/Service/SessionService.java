@@ -37,6 +37,10 @@ public class SessionService {
 		return sessionDao.findByCourseCode(code);
 	}
 
+	public CourseSession findBycourseSessionId(BigInteger sessionId) {
+		return sessionDao.findBycourseSessionId(sessionId);
+	}
+	
 	public List<SessionsResult> getSessions(Long locationId, Date sqlDateA, String keyword) {
 		List<SessionsResult> views = new ArrayList<>();
 		List<Object[]> result = sessionDao.findSessions(locationId, sqlDateA, "%" + keyword + "%");

@@ -1,5 +1,6 @@
 package fr.utbm.lo54projet.Repository;
 
+import java.math.BigInteger;
 import java.sql.Date;
 import java.util.List;
 
@@ -19,12 +20,14 @@ public interface SessionDao extends JpaRepository<CourseSession, Long> {
 	List<CourseSession> findByLocationId(Long locationId);
 
 	List<CourseSession> findByCourseCode(String courseCode);
+	
+	CourseSession findBycourseSessionId(BigInteger sessionId);
 
 	@Query(value = "select s.COURSE_CODE,c.TITLE," + "s.START_DATE," + "s.END_DATE," + "s.MAX,"
 			+ "count(cl.COURSE_SESSION_ID)/s.MAX*100," + "l.LOCATION_CITY,"+"cl.COURSE_SESSION_ID"
 			+ " from location l, course c inner join course_session s" + " on s.COURSE_CODE=c.COURSE_CODE"
 			+ " left join client cl" + " on cl.COURSE_SESSION_ID = s.COURSE_SESSION_ID"
-			+ " wherel.LOCATION_ID=s.LOCATION_ID and s.LOCATION_ID=?1 and s.START_DATE>?2 and c.TITLE like ?3"
+			+ " where l.LOCATION_ID=s.LOCATION_ID and s.LOCATION_ID=?1 and s.START_DATE>?2 and c.TITLE like ?3"
 			+ " group by s.COURSE_CODE,c.TITLE,s.START_DATE,s.END_DATE,s.MAX,l.LOCATION_CITY,cl.COURSE_SESSION_ID", nativeQuery = true)
 	List<Object[]> findSessions(Long locationId, Date sqlDateA, String keyword);
 
