@@ -1,4 +1,4 @@
-package fr.utbm.lo54projet.Service;
+package fr.utbm.lo54projet.service;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
-import fr.utbm.lo54projet.Entity.Course;
-import fr.utbm.lo54projet.Repository.CourseDao;
+import fr.utbm.lo54projet.entity.Course;
+import fr.utbm.lo54projet.repository.CourseDao;
 
 @Service
 public class CourseService {

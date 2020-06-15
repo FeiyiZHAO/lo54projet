@@ -1,4 +1,4 @@
-package fr.utbm.lo54projet.Service;
+package fr.utbm.lo54projet.service;
 
 import java.util.List;
 
@@ -7,9 +7,8 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
-import fr.utbm.lo54projet.Entity.Location;
-
-import fr.utbm.lo54projet.Repository.LocationDao;
+import fr.utbm.lo54projet.entity.Location;
+import fr.utbm.lo54projet.repository.LocationDao;
 
 @Service
 public class LocationService {

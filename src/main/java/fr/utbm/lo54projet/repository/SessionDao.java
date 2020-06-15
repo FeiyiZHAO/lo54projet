@@ -1,4 +1,4 @@
-package fr.utbm.lo54projet.Repository;
+package fr.utbm.lo54projet.repository;
 
 import java.math.BigInteger;
 import java.sql.Date;
@@ -6,9 +6,11 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
-import fr.utbm.lo54projet.Entity.CourseSession;
+import fr.utbm.lo54projet.entity.CourseSession;
 
+@Repository
 public interface SessionDao extends JpaRepository<CourseSession, Long> {
 
 	List<CourseSession> findAll();

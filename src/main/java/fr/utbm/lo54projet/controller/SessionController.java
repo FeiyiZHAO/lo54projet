@@ -1,4 +1,4 @@
-package fr.utbm.lo54projet.Controller;
+package fr.utbm.lo54projet.controller;
 
 import java.sql.Date;
 import java.text.ParseException;
@@ -16,11 +16,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.sun.istack.NotNull;
 
-import fr.utbm.lo54projet.Entity.CourseSession;
-import fr.utbm.lo54projet.Entity.Location;
-import fr.utbm.lo54projet.Entity.SessionsResult;
-import fr.utbm.lo54projet.Service.LocationService;
-import fr.utbm.lo54projet.Service.SessionService;
+import fr.utbm.lo54projet.entity.CourseSession;
+import fr.utbm.lo54projet.entity.Location;
+import fr.utbm.lo54projet.entity.SessionsResult;
+import fr.utbm.lo54projet.service.LocationService;
+import fr.utbm.lo54projet.service.SessionService;
 
 @Controller
 public class SessionController {

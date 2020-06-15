@@ -21,8 +21,8 @@
 					<h3 class="text-center">Sign Up</h3>
 				</div>
 				<div class="panel-heading">
-					<h4 class="text-center">Selected session is </h4>
-					<h4 class="text-center"> ${sessionId}</h4>
+					<h4 class="text-center">Selected course code is </h4>
+					<h4 class="text-center"> ${sessionNom}</h4>
 				</div>
 				<div class="panel-body">
 					<form class="form-horizontal" role="form" action="success" accept-charset="UTF-8" method="post" οnsubmit="return validate()">

@@ -1,13 +1,10 @@
-package fr.utbm.lo54projet.Controller;
+package fr.utbm.lo54projet.controller;
 
-import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import fr.utbm.lo54projet.Entity.Location;
-import fr.utbm.lo54projet.Service.LocationService;
+
 
 @RestController
 @RequestMapping("location")

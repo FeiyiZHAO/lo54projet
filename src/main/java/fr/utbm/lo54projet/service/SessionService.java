@@ -1,4 +1,4 @@
-package fr.utbm.lo54projet.Service;
+package fr.utbm.lo54projet.service;
 
 import java.math.BigInteger;
 import java.sql.Date;
@@ -10,15 +10,15 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
-import fr.utbm.lo54projet.Entity.CourseSession;
-import fr.utbm.lo54projet.Entity.SessionsResult;
-import fr.utbm.lo54projet.Repository.SessionDao;
+import fr.utbm.lo54projet.entity.CourseSession;
+import fr.utbm.lo54projet.entity.SessionsResult;
+import fr.utbm.lo54projet.repository.SessionDao;
 
 @Service
 public class SessionService {
 	@Resource
 	SessionDao sessionDao;
-
+	
 	@Transactional
 	// 通过下拉列表选择Location，获得Location ID
 	public List<CourseSession> getByLocation(Long LocationId) {

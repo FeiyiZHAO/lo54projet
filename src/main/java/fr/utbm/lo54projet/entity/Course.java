@@ -1,4 +1,4 @@
-package fr.utbm.lo54projet.Entity;
+package fr.utbm.lo54projet.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

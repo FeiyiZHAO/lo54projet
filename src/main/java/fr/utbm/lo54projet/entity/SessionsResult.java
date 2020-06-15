@@ -1,4 +1,4 @@
-package fr.utbm.lo54projet.Entity;
+package fr.utbm.lo54projet.entity;
 
 import java.math.BigInteger;
 import java.sql.Date;

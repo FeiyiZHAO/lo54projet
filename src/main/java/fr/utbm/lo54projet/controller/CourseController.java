@@ -1,4 +1,4 @@
-package fr.utbm.lo54projet.Controller;
+package fr.utbm.lo54projet.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,8 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import fr.utbm.lo54projet.Entity.Course;
-import fr.utbm.lo54projet.Service.CourseService;
+import fr.utbm.lo54projet.entity.Course;
+import fr.utbm.lo54projet.service.CourseService;
 
 @Controller
 public class CourseController {

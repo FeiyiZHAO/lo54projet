@@ -1,4 +1,4 @@
-package fr.utbm.lo54projet.Controller;
+package fr.utbm.lo54projet.controller;
 
 import java.math.BigInteger;
 
@@ -11,10 +11,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import fr.utbm.lo54projet.Entity.Client;
-import fr.utbm.lo54projet.Entity.CourseSession;
-import fr.utbm.lo54projet.Service.ClientService;
-import fr.utbm.lo54projet.Service.SessionService;
+import fr.utbm.lo54projet.entity.Client;
+import fr.utbm.lo54projet.entity.CourseSession;
+import fr.utbm.lo54projet.service.ClientService;
+import fr.utbm.lo54projet.service.SessionService;
 
 @Controller
 public class ClientController {
@@ -28,7 +28,9 @@ public class ClientController {
 		BigInteger b = new BigInteger(request.getParameter("sessionId"));
 		sessionId = b;
 		CourseSession cs = sessionService.findBycourseSessionId(b);
-		model.addAttribute("sessionId", cs.getCourseCode());
+		String cc = cs.getCourseCode();
+		model.addAttribute("sessionId", b);
+		model.addAttribute("sessionNom", cc);
 		return "registre";
 	}
 	

@@ -1,4 +1,4 @@
-package fr.utbm.lo54projet.Service;
+package fr.utbm.lo54projet.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,8 +6,8 @@ import javax.annotation.Resource;
 import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
-import fr.utbm.lo54projet.Entity.Client;
-import fr.utbm.lo54projet.Repository.ClientDao;
+import fr.utbm.lo54projet.entity.Client;
+import fr.utbm.lo54projet.repository.ClientDao;
 
 @Service
 public class ClientService {
